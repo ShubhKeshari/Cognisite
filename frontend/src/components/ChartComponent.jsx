@@ -27,7 +27,7 @@ const ChartComponent = () => {
       const labels = backendData.map((item) => item.activityName);
       const datasets = [
         {
-          label: "Cognisite Data",
+          label: "Construction Project Timeline",
           data: backendData.map((item) => [item.startDate, item.endDate]),
           backgroundColor: "#2a68a2",
           borderColor: "#2a68a2",
@@ -49,8 +49,11 @@ const ChartComponent = () => {
             x: {
               type: "time",
               time: {
-                unit: "day",
-                tooltipFormat: "yyyy-MM-dd",
+                unit: "day", 
+                displayFormats: {
+                  day: 'MMM d, yyyy' 
+                },
+                tooltipFormat: "MMM d, yyyy",
               },
               min: minDate,
             },
