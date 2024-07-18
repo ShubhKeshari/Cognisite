@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import Chart from "chart.js/auto";
 import "chartjs-adapter-date-fns";
 import { BASE_URL } from "../../util/vars";
-import { Box } from "@chakra-ui/react";
+import { Box,Stack } from "@chakra-ui/react";
+import { Skeleton } from '@chakra-ui/react'
+
 const ChartComponent = () => {
   const [backendData, setBackendData] = useState([]);
+  const [isLoading,setIsLoading] = useState(true);
   useEffect(() => {
     const fetchDataAndRenderChart = async () => {
       try {
@@ -14,6 +17,7 @@ const ChartComponent = () => {
         }
         const dataFromBackend = await response.json();
         setBackendData(dataFromBackend);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -79,14 +83,29 @@ const ChartComponent = () => {
   };
 
   return (
-    <Box mt={16} mx={20}>
-      <Box className="chartCard">
-        <Box className="chartBox">
-          <canvas id="myChart"></canvas>
+    isLoading ? (
+      <Stack mt={20} mx={20}>
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+        <Skeleton height='20px' />
+      </Stack>
+    ) : (
+      <Box mt={16} mx={20}>
+        <Box className="chartCard">
+          <Box className="chartBox">
+            <canvas id="myChart"></canvas>
+          </Box>
         </Box>
       </Box>
-    </Box>
+    )
   );
 };
 
-export default ChartComponent;
+export {ChartComponent};

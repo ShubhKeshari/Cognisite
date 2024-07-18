@@ -3,7 +3,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AddActivity } from "../Pages/AddActivity";
 import { Error } from "../Pages/Error";
-import ChartComponent from "../components/ChartComponent";
+import {ChartComponent} from "../components/ChartComponent";
 
 const AllRoutes = () => {
   return (
