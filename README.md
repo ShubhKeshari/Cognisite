@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is a dynamic Gantt chart application that visualizes project timelines with automatic end date calculations. Users can customize inputs such as start date, labor, and efficiency for accurate timeline generation.
+This project is a dynamic Gantt chart application that visualizes project timelines with automatic end date calculations. Users can customize inputs such as activity name, start date, workers count, and workers perday efficiency,total work for accurate timeline generation.
 
 ## Project Type
 
