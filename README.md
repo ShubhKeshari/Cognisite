@@ -93,6 +93,10 @@ npm install
 
 npm run server
 ```
+## Snapshot of the website
+
+![image](https://github.com/user-attachments/assets/7aa63434-a39d-4d30-a099-347df8932317)
+![image](https://github.com/user-attachments/assets/e7431869-dec1-469a-b1de-e4d5e598dc6f)
 
 ## API Endpoints
 
